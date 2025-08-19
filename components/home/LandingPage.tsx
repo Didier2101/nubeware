@@ -32,7 +32,7 @@ export default function LandingPage() {
             {/* Sección de Héroe */}
             <Hero
                 title="Software, Hardware, Nubeware."
-                subtitle='“Somos una empresa enfocada en Servicios de Inteligencia Artificial en la nube. Estamos convencidos de que la alta tecnología puede estar al alcance de todos y trabajar al servicio de la humanidad” por “Impulsamos el logro de los objetivos de Negocio de las empresas a través de AI, Analítica, Servicios Cloud y software a la medida. Estamos convencidos de que la alta tecnología puede estar al alcance de todos y trabajar al servicio de la humanidad”'
+                subtitle="Impulsamos el logro de los objetivos de Negocio de las empresas a través de AI, Analítica, Servicios Cloud y software a la medida. Estamos convencidos de que la alta tecnología puede estar al alcance de todos y trabajar al servicio de la humanidad."
                 buttonText="Conoce nuestros servicios"
                 buttonLink="/services"
             />
