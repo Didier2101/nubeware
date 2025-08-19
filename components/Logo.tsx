@@ -14,7 +14,7 @@ const Logo = () => {
                 href="/"
                 className="text-3xl font-black font-montserrat text-blue-600 dark:text-blue-400 hover:text-blue-800 transition-colors"
             >
-                Nubeware
+                Nubeware.Ai
             </Link>
             <span className="text-sm font-light text-gray-500 dark:text-gray-400 font-inter">
                 Impulsando la innovación.

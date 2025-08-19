@@ -21,7 +21,7 @@ const CloudIntegrationContent = () => {
         <>
             <Hero
                 title="Integración y Servicios en la Nube"
-                subtitle="Aproveche el poder de la nube con arquitecturas escalables, seguras y rentables que impulsan la eficiencia y la innovación."
+                subtitle="Aproveche el poder de la nube con arquitecturas que permiten obtener mayor escalabilidad, seguridad y economía, impulsando la eficiencia y la innovación de su empresa."
             />
             <section className="py-12 md:py-24 transition-colors duration-300">
                 <div className="container mx-auto px-6 max-w-8xl">

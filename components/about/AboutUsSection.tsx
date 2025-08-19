@@ -150,44 +150,6 @@ const AboutUsSection = () => {
                         </div>
                     </motion.div>
 
-                    {/* Nuestro Compromiso - Solo contenido con fondo especial */}
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.3 }}
-                        variants={contentVariants}
-                        className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-2xl p-8 md:p-12 text-center"
-                    >
-                        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <Globe className="text-white" size={40} />
-                        </div>
-                        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Nuestro Compromiso</h3>
-                        <div className="max-w-4xl mx-auto space-y-4">
-                            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Estamos comprometidos con crear tecnología que sea ética, sostenible y beneficiosa para la sociedad. Creemos en el poder de la IA para resolver problemas reales y mejorar la calidad de vida de las personas.
-                            </p>
-                            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Nuestro enfoque no se limita solo al desarrollo tecnológico, sino también a la educación y capacitación de nuestros clientes para que puedan aprovechar al máximo las soluciones que implementamos.
-                            </p>
-                        </div>
-
-                        {/* Estadísticas */}
-                        <div className="grid md:grid-cols-3 gap-8 mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                            <div>
-                                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">50+</div>
-                                <p className="text-gray-700 dark:text-gray-300">Proyectos Exitosos</p>
-                            </div>
-                            <div>
-                                <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">98%</div>
-                                <p className="text-gray-700 dark:text-gray-300">Satisfacción del Cliente</p>
-                            </div>
-                            <div>
-                                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">24/7</div>
-                                <p className="text-gray-700 dark:text-gray-300">Soporte Técnico</p>
-                            </div>
-                        </div>
-                    </motion.div>
-
                 </div>
             </section>
         </>

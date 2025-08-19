@@ -32,10 +32,11 @@ export default function LandingPage() {
             {/* Sección de Héroe */}
             <Hero
                 title="Software, Hardware, Nubeware."
-                subtitle="Somos una empresa enfocada en servicios de Inteligencia Artificial en la nube. Estamos convencidos de que la alta tecnología puede estar al alcance de todos y trabajar al servicio de la humanidad."
+                subtitle='“Somos una empresa enfocada en Servicios de Inteligencia Artificial en la nube. Estamos convencidos de que la alta tecnología puede estar al alcance de todos y trabajar al servicio de la humanidad” por “Impulsamos el logro de los objetivos de Negocio de las empresas a través de AI, Analítica, Servicios Cloud y software a la medida. Estamos convencidos de que la alta tecnología puede estar al alcance de todos y trabajar al servicio de la humanidad”'
                 buttonText="Conoce nuestros servicios"
                 buttonLink="/services"
             />
+
 
 
             {/* Sección de Servicios Principales */}
@@ -78,7 +79,7 @@ export default function LandingPage() {
                         </motion.div>
                         <motion.div variants={itemVariants}>
                             <CardService
-                                title="Hardware Alto Rendimiento"
+                                title="Hardware de alto rendimiento"
                                 description="Infraestructura física optimizada para proyectos de IA, desde servidores hasta computación de borde."
                                 icon={<Cpu size={32} />}
                                 link="/services/hardware-solutions"
@@ -87,7 +88,7 @@ export default function LandingPage() {
                         </motion.div>
                         <motion.div variants={itemVariants}>
                             <CardService
-                                title="Software a Medida"
+                                title="Software a la Medida"
                                 description="Desarrollo de aplicaciones web, móviles y empresariales diseñadas específicamente para sus necesidades."
                                 icon={<Code2 size={32} />}
                                 link="/services/custom-software"
@@ -96,7 +97,7 @@ export default function LandingPage() {
                         <motion.div variants={itemVariants}>
                             <CardService
                                 title="Servicios en la Nube"
-                                description="Integración y migración a la nube con arquitecturas escalables, seguras y rentables."
+                                description="Integración y migración a la nube con arquitecturas que permiten obtener mayor escalabilidad, seguridad y economía"
                                 icon={<Cloud size={32} />}
                                 link="/services/cloud-integration"
                             />
@@ -189,7 +190,7 @@ export default function LandingPage() {
                         <motion.div variants={itemVariants}>
                             <CardService
                                 title="Implementación y Soporte"
-                                description="No solo entregamos el producto. Garantizamos una implementación fluida y le ofrecemos soporte continuo para máximo rendimiento."
+                                description="No sólo entregamos el producto. Garantizamos una implementación fluida y le ofrecemos soporte continuo para máximo rendimiento."
                                 icon={<Handshake size={32} />}
                             />
                         </motion.div>

@@ -17,7 +17,7 @@ export default function SectionContact() {
             {/* Sección de Héroe (Altura Ajustada) */}
             <Hero
                 title="Póngase en contacto con nosotros"
-                subtitle="Estamos listos para escuchar su próximo gran proyecto. Llene el formulario y comience hoy su transformación digital."
+                subtitle="Estamos listos para escuchar su próximo gran proyecto. Complete el formulario y comience hoy su transformación digital."
             />
 
             <hr className="my-8 border-gray-200 dark:border-gray-800" />
