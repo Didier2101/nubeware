@@ -15,7 +15,7 @@ export default function ClientsSection() {
                         alt="Logo de SensorTES"
                         width={200}
                         height={100}
-
+                        className="object-contain rounded-md border border-gray-200 p-4 bg-white"
                     />
                 </div>
             </div>
