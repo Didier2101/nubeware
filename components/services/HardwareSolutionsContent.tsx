@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 import Image from 'next/image';
 
 // Imágenes de Unsplash relacionadas con hardware de alto rendimiento
-const serverRacksImage = 'https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2067&q=80';
+const serverRacksImage = 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80';
 const edgeAiImage = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80';
 const gpuClusterImage = 'https://images.unsplash.com/photo-1640552435388-a54879e72b28?ixlib=rb-4.0.3&auto=format&fit=crop&w=2100&q=80';
 const dataCenterImage = 'https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80';
@@ -55,7 +55,7 @@ const HardwareSolutionsContent = () => {
                                 className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
-                        <div>
+                        <div className='text-center'>
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Servidores y Racks de Alto Rendimiento</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Ofrecemos la selección y configuración de servidores dedicados y racks optimizados para la carga de trabajo de IA, garantizando la máxima velocidad y capacidad de procesamiento.
@@ -71,7 +71,7 @@ const HardwareSolutionsContent = () => {
                         variants={contentVariants}
                         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-16"
                     >
-                        <div className="md:order-1">
+                        <div className="md:order-1 text-center">
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Soluciones de Computación de Borde (Edge AI)</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Creamos sistemas de IA de borde para procesar datos directamente en dispositivos y ubicaciones remotas, permitiendo respuestas en tiempo real y reduciendo la latencia.
@@ -105,7 +105,7 @@ const HardwareSolutionsContent = () => {
                                 className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
-                        <div>
+                        <div className='text-center'>
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Implementación de Clústeres de GPU</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Diseñamos e implementamos clústeres de unidades de procesamiento gráfico (GPU) para acelerar el entrenamiento de modelos de Deep Learning y otras tareas de computación intensiva.
@@ -121,7 +121,7 @@ const HardwareSolutionsContent = () => {
                         variants={contentVariants}
                         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-16"
                     >
-                        <div className="md:order-1">
+                        <div className="md:order-1 text-center">
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Infraestructura y Redes Optimizadas</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Complementamos el hardware con redes de alta velocidad y una infraestructura robusta para asegurar que la transferencia de datos sea rápida, segura y confiable.

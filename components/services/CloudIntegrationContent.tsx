@@ -8,7 +8,7 @@ import Image from 'next/image';
 const cloudMigrationImage = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80';
 const hybridCloudImage = 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80';
 const serverlessImage = 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80';
-const dataStorageImage = 'https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2067&q=80';
+const dataStorageImage = 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80';
 
 
 const contentVariants = {
@@ -56,7 +56,7 @@ const CloudIntegrationContent = () => {
                                 className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
-                        <div>
+                        <div className='text-center'>
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Migración Estratégica a la Nube</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Planificamos y ejecutamos migraciones seguras y sin problemas a plataformas líderes como AWS, Google Cloud y Azure. Optimizamos sus cargas de trabajo para un rendimiento y costo-eficiencia superiores en la nube.
@@ -72,7 +72,7 @@ const CloudIntegrationContent = () => {
                         variants={contentVariants}
                         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-16"
                     >
-                        <div className="md:order-1">
+                        <div className="md:order-1 text-center">
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Implementaciones de Nube Híbrida</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Integramos su infraestructura local con soluciones en la nube, creando un entorno híbrido flexible que le permite aprovechar lo mejor de ambos mundos.
@@ -106,7 +106,7 @@ const CloudIntegrationContent = () => {
                                 className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
-                        <div>
+                        <div className='text-center'>
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Servicios Serverless y Computación sin Servidor</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Desarrollamos aplicaciones y servicios utilizando arquitecturas serverless para una mayor escalabilidad, menores costos operativos y un enfoque en el código en lugar de la infraestructura.
@@ -122,7 +122,7 @@ const CloudIntegrationContent = () => {
                         variants={contentVariants}
                         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-16"
                     >
-                        <div className="md:order-1">
+                        <div className="md:order-1 text-center">
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Almacenamiento y Gestión de Datos en la Nube</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Implementamos soluciones de almacenamiento de datos escalables y seguras en la nube. Ofrecemos servicios de gestión, backup y recuperación para garantizar la integridad y disponibilidad de su información.

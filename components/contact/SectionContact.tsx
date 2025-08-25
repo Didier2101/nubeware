@@ -1,14 +1,14 @@
 // SectionContact.tsx
 'use client';
 
-import { motion, Variants } from 'framer-motion';
-import ContactForm from '@/components/contact/ContactForm';
+// import { motion, Variants } from 'framer-motion';
+// import ContactForm from '@/components/contact/ContactForm';
 import Hero from '../Hero';
 
-const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.8 } },
-};
+// const containerVariants: Variants = {
+//     hidden: { opacity: 0 },
+//     visible: { opacity: 1, transition: { duration: 0.8 } },
+// };
 
 export default function SectionContact() {
     return (
@@ -20,10 +20,12 @@ export default function SectionContact() {
                 subtitle="Estamos listos para escuchar su próximo gran proyecto. Complete el formulario y comience hoy su transformación digital."
             />
 
-            <hr className="my-8 border-gray-200 dark:border-gray-800" />
+            {/* <hr className="my-8 border-gray-200 dark:border-gray-800" /> */}
+            <p className="font-bold text-2xl text-center text-gray-400 py-8">En construcion</p>
+
 
             {/* Sección del Formulario (Aparece al hacer scroll) */}
-            <div className="py-24">
+            {/* <div className="py-24">
                 <div className="container mx-auto px-6 text-center">
                     <motion.div
                         variants={containerVariants}
@@ -45,7 +47,7 @@ export default function SectionContact() {
                         </div>
                     </motion.div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

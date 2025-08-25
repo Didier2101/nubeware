@@ -3,7 +3,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Facebook, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Linkedin, } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -50,11 +50,7 @@ const Footer = () => {
                                 Contáctenos
                             </Link>
                         </li>
-                        <li>
-                            <Link href="/team" className="hover:text-blue-500 transition-colors">
-                                Conoce al Equipo
-                            </Link>
-                        </li>
+
                     </ul>
                 </div>
 
@@ -84,18 +80,18 @@ const Footer = () => {
                 <div>
                     <h4 className="text-lg font-semibold text-white mb-4">Síguenos</h4>
                     <div className="flex space-x-4">
-                        <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors">
+                        {/* <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors">
                             <Facebook size={24} />
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors">
+                        </a> */}
+                        {/* <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors">
                             <Twitter size={24} />
-                        </a>
+                        </a> */}
                         <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors">
                             <Linkedin size={24} />
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors">
+                        {/* <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors">
                             <Instagram size={24} />
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             </div>

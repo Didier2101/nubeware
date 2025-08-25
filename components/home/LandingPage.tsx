@@ -1,10 +1,12 @@
-// app/page.tsx
 'use client';
 
 import { motion, Variants } from 'framer-motion';
 import { Brain, Cloud, Code2, ShieldCheck, TrendingUp, HeartHandshake, Puzzle, Workflow, Handshake, Cpu, } from 'lucide-react';
 import CardService from '../services/CardService';
 import Hero from '../Hero';
+import ClientsSection from '../ClientsSection';
+import TestimonialsSection from '../TestimonialsSection';
+
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -32,12 +34,13 @@ export default function LandingPage() {
             {/* Sección de Héroe */}
             <Hero
                 title="Software, Hardware, Nubeware."
-                subtitle="Impulsamos el logro de los objetivos de Negocio de las empresas a través de AI, Analítica, Servicios Cloud y software a la medida. Estamos convencidos de que la alta tecnología puede estar al alcance de todos y trabajar al servicio de la humanidad."
+                subtitle="Impulsamos el logro de los objetivos de Negocio de las empresas a través de AI, Analítica, Servicios Cloud y Software a la Medida. Estamos convencidos de que la alta tecnología puede estar al alcance de todos y trabajar al servicio de la humanidad."
                 buttonText="Conoce nuestros servicios"
                 buttonLink="/services"
             />
 
-
+            {/* Nueva Sección de Clientes */}
+            <ClientsSection />
 
             {/* Sección de Servicios Principales */}
             <section className="py-24">
@@ -74,7 +77,6 @@ export default function LandingPage() {
                                 description="Soluciones de IA de vanguardia, desde machine learning hasta redes neuronales para automatizar y optimizar."
                                 icon={<Brain size={32} />}
                                 link="/services/ai-solutions"
-                            // featured={true}
                             />
                         </motion.div>
                         <motion.div variants={itemVariants}>
@@ -83,7 +85,6 @@ export default function LandingPage() {
                                 description="Infraestructura física optimizada para proyectos de IA, desde servidores hasta computación de borde."
                                 icon={<Cpu size={32} />}
                                 link="/services/hardware-solutions"
-                            // gradient={true}
                             />
                         </motion.div>
                         <motion.div variants={itemVariants}>
@@ -139,7 +140,6 @@ export default function LandingPage() {
                                 title="Innovación Continua"
                                 description="Nos mantenemos a la vanguardia, investigando y aplicando las últimas tendencias en IA para ofrecerle soluciones de futuro."
                                 icon={<TrendingUp size={32} />}
-                            // featured={true}
                             />
                         </motion.div>
                         <motion.div variants={itemVariants}>
@@ -184,7 +184,6 @@ export default function LandingPage() {
                                 title="Desarrollo Ágil"
                                 description="Usamos metodologías ágiles para desarrollar su solución en ciclos cortos, asegurando transparencia y entrega continua de valor."
                                 icon={<Workflow size={32} />}
-                            // gradient={true}
                             />
                         </motion.div>
                         <motion.div variants={itemVariants}>
@@ -197,6 +196,9 @@ export default function LandingPage() {
                     </motion.div>
                 </div>
             </section>
+
+            {/* Nueva Sección de Reseñas */}
+            <TestimonialsSection />
         </div>
     );
 }

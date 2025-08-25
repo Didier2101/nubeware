@@ -33,7 +33,7 @@ const CustomSoftwareContent = () => {
                         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
                             Nuestras Soluciones Personalizadas
                         </h2>
-                        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+                        <p className="text-lg text-gray-700 text-center dark:text-gray-300 leading-relaxed mb-8">
                             En <b>Nubeware.ai</b>, entendemos que cada negocio es único. Por eso, nuestro servicio de software a medida se centra en entender sus requisitos exactos para crear una solución que encaje perfectamente con sus operaciones. Utilizamos tecnologías modernas y metodologías ágiles para entregar productos de alta calidad en plazos definidos.
                         </p>
                     </motion.div>
@@ -55,7 +55,7 @@ const CustomSoftwareContent = () => {
                                 className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
-                        <div>
+                        <div className='text-center'>
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Aplicaciones Web Robustas</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Desde portales de clientes y e-commerce hasta complejas plataformas empresariales, creamos aplicaciones web seguras, escalables y optimizadas para cualquier dispositivo.
@@ -71,7 +71,7 @@ const CustomSoftwareContent = () => {
                         variants={contentVariants}
                         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-16"
                     >
-                        <div className="md:order-1">
+                        <div className="md:order-1 text-center">
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Desarrollo Móvil Multiplataforma</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Diseñamos y construimos aplicaciones móviles nativas y multiplataforma para iOS y Android, asegurando una experiencia de usuario fluida e intuitiva.
@@ -105,7 +105,7 @@ const CustomSoftwareContent = () => {
                                 className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
-                        <div>
+                        <div className='text-center'>
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Software para la Gestión Empresarial</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Creamos sistemas de gestión de inventario, CRMs, ERPs y otras herramientas personalizadas que automatizan y optimizan los flujos de trabajo de su negocio.
@@ -121,7 +121,7 @@ const CustomSoftwareContent = () => {
                         variants={contentVariants}
                         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-16"
                     >
-                        <div className="md:order-1">
+                        <div className="md:order-1 text-center">
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Integración y Modernización de Software</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Modernizamos sistemas legados y los integramos con tecnologías y aplicaciones más recientes para garantizar que su ecosistema digital sea cohesivo y eficiente.
