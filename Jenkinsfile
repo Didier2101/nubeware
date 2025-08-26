@@ -18,15 +18,16 @@ pipeline {
         }
 
         stage('Run Container') {
-            steps {
-                script {
-                    // Si ya existe un contenedor viejo, lo eliminamos
-                    sh 'docker rm -f nubeware-app || true'
-                    
-                    // Levantamos el nuevo
-                    sh 'docker run -d -p 3000:3000 --name nubeware-app nubeware-app'
-                }
-            }
+    steps {
+        script {
+            // Si ya existe un contenedor viejo, lo eliminamos
+            sh 'docker rm -f nubeware-app || true'
+            
+            // Levantamos el nuevo con restart policy
+            sh 'docker run -d -p 3000:3000 --restart unless-stopped --name nubeware-app nubeware-app'
         }
+    }
+}
+
     }
 }
