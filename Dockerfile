@@ -1,22 +1,29 @@
-# ---- dependencias ----
-FROM node:20-alpine AS deps
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-
-# ---- build ----
+# Etapa 1: Build de la app Next.js
 FROM node:20-alpine AS builder
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+
+# Copiar dependencias
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copiar el resto del código
 COPY . .
+
+# Build de la app
 RUN npm run build
 
-# ---- runtime ----
+# Etapa 2: Imagen para producción
 FROM node:20-alpine AS runner
 WORKDIR /app
+
 ENV NODE_ENV=production
-RUN addgroup -g 1001 -S nodejs && adduser -S nextjs -u 1001
-COPY --from=builder /app ./
-USER nextjs
+
+# Copiamos los archivos necesarios desde el builder
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+
 EXPOSE 3000
-CMD ["npm", "run", "start"]
+
+CMD ["npm", "start"]
