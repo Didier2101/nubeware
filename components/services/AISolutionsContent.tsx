@@ -6,10 +6,10 @@ import Hero from '@/components/Hero';
 import Image from 'next/image';
 
 // Imágenes locales (en /public/images/ai-solutions)
-const predictiveAnalysisImage = '/images/ai-solutions/predictive-analysis.avif';
-const computerVisionImage = '/images/ai-solutions/computer-vision.avif';
-const nlpImage = '/images/ai-solutions/nlp.avif';
-const intelligentAutomationImage = '/images/ai-solutions/intelligent-automation.avif';
+const predictiveAnalysisImage = '/images/ai-solutions/predictive-analysis.png';
+const computerVisionImage = '/images/ai-solutions/computer-vision.png';
+const nlpImage = '/images/ai-solutions/nlp.png';
+const intelligentAutomationImage = '/images/ai-solutions/intelligent-automation.png';
 
 const contentVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -53,7 +53,7 @@ const AISolutionsContent = () => {
                                 alt="Análisis Predictivo"
                                 width={600}
                                 height={400}
-                                className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                className="w-full h-84 md:h-120 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
                         <div className="text-center">
@@ -61,7 +61,7 @@ const AISolutionsContent = () => {
                                 Análisis Predictivo
                             </h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Predecimos tendencias de mercado, comportamiento del consumidor y fallos de equipos para optimizar su estrategia de negocio. Utilizamos algoritmos avanzados de machine learning para analizar patrones históricos y generar insights de valor para su negocio.
+                                En la era de la información, el futuro pertenece a quienes pueden anticiparlo. Nuestro servicio de Análisis Predictivo va más allá de un simple análisis de datos históricos. A través de algoritmos avanzados de Machine Learning, no solo identificamos patrones, sino que también predecimos tendencias de mercado, el comportamiento futuro de los consumidores y posibles fallos en equipos o sistemas. Esto le permite tomar decisiones proactivas e informadas, optimizar sus estrategias de negocio, y ganar una ventaja competitiva significativa en su industria.
                             </p>
                         </div>
                     </motion.div>
@@ -79,7 +79,7 @@ const AISolutionsContent = () => {
                                 Visión por Computadora
                             </h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Desarrollamos sistemas de reconocimiento de imágenes y video para control de calidad, seguridad y análisis de datos visuales. Nuestras soluciones incluyen detección de objetos, reconocimiento facial y análisis de comportamiento.
+                                La Visión por Computadora permite que sus sistemas &quot;vean&quot; y &quot;entiendan&quot; el mundo visual, convirtiendo imágenes y videos en datos accionables. Desarrollamos soluciones de vanguardia para el reconocimiento de objetos, detección de defectos en líneas de producción, análisis de comportamiento del cliente, y reconocimiento facial seguro. Estas herramientas no solo mejoran la seguridad y el control de calidad, sino que también automatizan procesos que antes requerían una supervisión humana constante, liberando recursos valiosos.
                             </p>
                         </div>
                         <div className="rounded-lg overflow-hidden shadow-lg md:order-2">
@@ -88,7 +88,7 @@ const AISolutionsContent = () => {
                                 alt="Visión por Computadora"
                                 width={600}
                                 height={400}
-                                className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                className="w-full h-84 md:h-120 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
                     </motion.div>
@@ -107,7 +107,7 @@ const AISolutionsContent = () => {
                                 alt="Procesamiento del Lenguaje Natural"
                                 width={600}
                                 height={400}
-                                className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                className="w-full h-84 md:h-120 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
                         <div className="text-center">
@@ -115,7 +115,7 @@ const AISolutionsContent = () => {
                                 Procesamiento del Lenguaje Natural (NLP)
                             </h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Creamos chatbots inteligentes, análisis de sentimientos y resúmenes automáticos para mejorar la interacción con sus clientes y el manejo de su información. Implementamos modelos de lenguaje avanzados para comprensión contextual.
+                                El Procesamiento del Lenguaje Natural (NLP) es la clave para que su negocio entienda, interprete y genere lenguaje humano de manera efectiva. Creamos chatbots inteligentes capaces de manejar consultas de clientes 24/7, sistemas de análisis de sentimientos para medir la percepción de su marca en redes sociales, y herramientas de resumen automático que destilan grandes volúmenes de texto en información concisa. Estas soluciones, impulsadas por modelos de lenguaje avanzados, mejoran significativamente la interacción con sus clientes y optimizan el manejo de su información textual.
                             </p>
                         </div>
                     </motion.div>
@@ -133,7 +133,7 @@ const AISolutionsContent = () => {
                                 Automatización Inteligente
                             </h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Diseñamos robots de software (RPA) que combinados con IA, automatizan procesos complejos y liberan a su equipo para tareas estratégicas. Nuestras soluciones reducen errores y aumentan la eficiencia operacional.
+                                La Automatización Inteligente combina la robótica de procesos (RPA) con la inteligencia artificial para ir más allá de la simple automatización de tareas repetitivas. Diseñamos robots de software que no solo ejecutan procesos, sino que también toman decisiones, aprenden de su entorno y se adaptan a nuevas situaciones. Nuestras soluciones automatizan flujos de trabajo complejos, desde la gestión de documentos hasta la entrada de datos en múltiples sistemas, reduciendo drásticamente los errores humanos, incrementando la eficiencia operacional y permitiendo a su equipo concentrarse en iniciativas estratégicas de mayor valor.
                             </p>
                         </div>
                         <div className="rounded-lg overflow-hidden shadow-lg md:order-2">
@@ -142,7 +142,7 @@ const AISolutionsContent = () => {
                                 alt="Automatización Inteligente"
                                 width={600}
                                 height={400}
-                                className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                className="w-full h-84 md:h-120 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
                     </motion.div>

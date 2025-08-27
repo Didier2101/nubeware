@@ -5,10 +5,6 @@ import Hero from '@/components/Hero';
 import Image from 'next/image';
 import { Users, Heart, Clock, Globe } from 'lucide-react';
 
-// Imágenes de Unsplash relacionadas con tecnología y equipos
-const teamImage = 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80';
-const historyImage = 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80';
-
 const contentVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -33,7 +29,6 @@ const AboutUsSection = () => {
                         variants={contentVariants}
                         className="relative overflow-hidden mb-16"
                     >
-
                         <div className="relative text-center">
                             <motion.h2
                                 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 dark:from-white dark:via-blue-100 dark:to-white bg-clip-text text-transparent mb-8"
@@ -54,7 +49,7 @@ const AboutUsSection = () => {
                         </div>
                     </motion.div>
 
-                    {/* Nuestra Historia - Imagen izquierda, descripción derecha */}
+                    {/* Nuestra Historia */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -64,11 +59,11 @@ const AboutUsSection = () => {
                     >
                         <div className="rounded-lg overflow-hidden shadow-lg">
                             <Image
-                                src={historyImage}
+                                src="/images/history.png"
                                 alt="Historia de Nubeware.ai"
                                 width={600}
                                 height={400}
-                                className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                className="w-full h-84 md:h-120 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
                         <div>
@@ -80,12 +75,12 @@ const AboutUsSection = () => {
                                 Nubeware.ai nació de la visión de hacer que la tecnología más avanzada sea accesible para todos. Fundada por un equipo de expertos en IA y desarrollo de software, comenzamos con la creencia de que la inteligencia artificial no debe estar limitada a las grandes corporaciones.
                             </p>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Desde nuestros inicios, hemos trabajado incansablemente para cerrar la brecha entre la alta tecnología y las necesidades reales del mercado, siempre manteniendo nuestro compromiso con la excelencia y la innovación.
+                                Desde nuestros inicios, hemos trabajado incansablemente para cerrar la brecha entre la alta tecnología y las necesidades reales del mercado. Nuestra dedicación nos ha permitido acompañar a empresas de distintos sectores en su transformación digital, siempre manteniendo nuestro compromiso con la excelencia y la innovación.
                             </p>
                         </div>
                     </motion.div>
 
-                    {/* Nuestros Valores - Solo contenido con iconos */}
+                    {/* Nuestros Valores */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -119,7 +114,7 @@ const AboutUsSection = () => {
                         </div>
                     </motion.div>
 
-                    {/* Nuestro Equipo - Imagen izquierda, descripción derecha */}
+                    {/* Nuestro Equipo */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -129,11 +124,11 @@ const AboutUsSection = () => {
                     >
                         <div className="rounded-lg overflow-hidden shadow-lg">
                             <Image
-                                src={teamImage}
+                                src="/images/team.png"
                                 alt="Nuestro Equipo"
                                 width={600}
                                 height={400}
-                                className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                className="w-full h-84 md:h-120 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
                         <div>
@@ -145,7 +140,7 @@ const AboutUsSection = () => {
                                 Nuestro equipo está compuesto por ingenieros de software, especialistas en IA, arquitectos de soluciones y consultores tecnológicos con amplia experiencia en la industria. Cada miembro aporta una perspectiva única y un conjunto especializado de habilidades.
                             </p>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Trabajamos como una unidad cohesionada, combinando experiencia técnica con pasión por la innovación para entregar soluciones que realmente marcan la diferencia en su negocio.
+                                Trabajamos como una unidad cohesionada, combinando experiencia técnica con pasión por la innovación para entregar soluciones que realmente marcan la diferencia en su negocio. Además, fomentamos un entorno colaborativo que potencia la creatividad y permite diseñar estrategias adaptadas a cada cliente.
                             </p>
                         </div>
                     </motion.div>

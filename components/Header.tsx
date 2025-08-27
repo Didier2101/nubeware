@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Sun, Moon, Laptop, Menu, X, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Logo from './Logo';
@@ -18,7 +18,20 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
     const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+    const [hidden, setHidden] = useState(false);
+
+    const { scrollY } = useScroll();
+    const [lastY, setLastY] = useState(0);
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        if (latest > lastY && latest > 150) {
+            setHidden(true);
+        } else {
+            setHidden(false);
+        }
+        setLastY(latest);
+    });
+
 
     useEffect(() => {
         const storedTheme = localStorage.getItem('theme');
@@ -27,13 +40,6 @@ const Header = () => {
         } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             setTheme('dark');
         }
-
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     useEffect(() => {
@@ -161,10 +167,10 @@ const Header = () => {
 
     return (
         <motion.header
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ type: "spring", stiffness: 120, damping: 14 }}
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md' : 'bg-transparent'}`}
+            initial={{ y: 0 }}
+            animate={{ y: hidden ? -100 : 0 }}
+            transition={{ duration: 0.3 }}
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY.get() > 20 ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md' : 'bg-transparent'}`}
         >
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                 <Logo />

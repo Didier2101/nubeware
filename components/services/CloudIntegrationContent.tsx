@@ -4,12 +4,11 @@ import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
 import Image from 'next/image';
 
-// Imágenes de Unsplash relacionadas con la nube e integración
-const cloudMigrationImage = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80';
-const hybridCloudImage = 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80';
-const serverlessImage = 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80';
-const dataStorageImage = 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80';
-
+// Importamos imágenes locales desde la carpeta /public/images/cloud
+import cloudMigrationImage from '@/public/images/cloud/cloud-migration.png';
+import hybridCloudImage from '@/public/images/cloud/hybrid-cloud.png';
+import serverlessImage from '@/public/images/cloud/serverless.png';
+import dataStorageImage from '@/public/images/cloud/data-storage.png';
 
 const contentVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -35,11 +34,11 @@ const CloudIntegrationContent = () => {
                             ¿Qué Ofrecemos en Integración Cloud?
                         </h2>
                         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-                            En <b>Nubeware.ai</b>, facilitamos la transición y gestión de su infraestructura en la nube. Integramos sus sistemas y aplicaciones para crear un entorno de TI cohesivo y eficiente.
+                            En <b>Nubeware.ai</b>, facilitamos la transición y gestión de su infraestructura en la nube. Integramos sus sistemas y aplicaciones para crear un entorno de TI cohesivo, eficiente y preparado para el futuro digital de su organización.
                         </p>
                     </motion.div>
 
-                    {/* Migración a la Nube - Imagen izquierda, descripción derecha */}
+                    {/* Migración a la Nube */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -53,18 +52,18 @@ const CloudIntegrationContent = () => {
                                 alt="Migración a la Nube"
                                 width={600}
                                 height={400}
-                                className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                className="w-full h-84 md:h-120 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
                         <div className='text-center'>
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Migración Estratégica a la Nube</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Planificamos y ejecutamos migraciones seguras y sin problemas a plataformas líderes como AWS, Google Cloud y Azure. Optimizamos sus cargas de trabajo para un rendimiento y costo-eficiencia superiores en la nube.
+                                El camino hacia la nube puede ser complejo, pero con nuestra experiencia, garantizamos una transición fluida y segura. Realizamos un análisis exhaustivo de su infraestructura actual y planificamos una migración estratégica a plataformas líderes como AWS, Google Cloud y Azure. Nuestro enfoque está en optimizar sus cargas de trabajo desde el inicio, asegurando un rendimiento superior y una gestión de costos eficiente. Priorizamos la continuidad de sus operaciones y minimizamos los tiempos de inactividad, para que su negocio se beneficie de la nube sin interrupciones.
                             </p>
                         </div>
                     </motion.div>
 
-                    {/* Soluciones de Nube Híbrida - Descripción izquierda, imagen derecha */}
+                    {/* Nube Híbrida */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -75,7 +74,7 @@ const CloudIntegrationContent = () => {
                         <div className="md:order-1 text-center">
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Implementaciones de Nube Híbrida</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Integramos su infraestructura local con soluciones en la nube, creando un entorno híbrido flexible que le permite aprovechar lo mejor de ambos mundos.
+                                No todos los datos y aplicaciones necesitan estar en un solo lugar. Con nuestras soluciones de Nube Híbrida, creamos un puente seguro y eficiente entre su infraestructura local y la nube pública. Esto le brinda la flexibilidad de mantener datos sensibles en sus propios servidores mientras aprovecha la escalabilidad y los servicios avanzados de la nube para otras cargas de trabajo. El resultado es un entorno de TI más resiliente, seguro y con un control preciso sobre sus activos digitales.
                             </p>
                         </div>
                         <div className="rounded-lg overflow-hidden shadow-lg md:order-2">
@@ -84,12 +83,12 @@ const CloudIntegrationContent = () => {
                                 alt="Soluciones de Nube Híbrida"
                                 width={600}
                                 height={400}
-                                className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                className="w-full h-84 md:h-120 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
                     </motion.div>
 
-                    {/* Servicios Serverless y Computación sin Servidor - Imagen izquierda, descripción derecha */}
+                    {/* Serverless */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -103,18 +102,18 @@ const CloudIntegrationContent = () => {
                                 alt="Servicios Serverless"
                                 width={600}
                                 height={400}
-                                className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                className="w-full h-84 md:h-120 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
                         <div className='text-center'>
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Servicios Serverless y Computación sin Servidor</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Desarrollamos aplicaciones y servicios utilizando arquitecturas serverless para una mayor escalabilidad, menores costos operativos y un enfoque en el código en lugar de la infraestructura.
+                                Con las arquitecturas serverless, usted se libera de la gestión de la infraestructura. Nosotros nos encargamos de construir y desplegar sus aplicaciones en un entorno donde solo paga por lo que usa. Esta computación sin servidor no solo reduce drásticamente los costos operativos, sino que también permite que sus aplicaciones escalen automáticamente para manejar cualquier demanda de tráfico. El resultado es un desarrollo más rápido, un mantenimiento más simple y la capacidad de su equipo para enfocarse exclusivamente en la innovación y el crecimiento de su negocio.
                             </p>
                         </div>
                     </motion.div>
 
-                    {/* Almacenamiento y Gestión de Datos en la Nube - Descripción izquierda, imagen derecha */}
+                    {/* Almacenamiento en la Nube */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -125,7 +124,7 @@ const CloudIntegrationContent = () => {
                         <div className="md:order-1 text-center">
                             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Almacenamiento y Gestión de Datos en la Nube</h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Implementamos soluciones de almacenamiento de datos escalables y seguras en la nube. Ofrecemos servicios de gestión, backup y recuperación para garantizar la integridad y disponibilidad de su información.
+                                La seguridad y la accesibilidad de sus datos son cruciales. Diseñamos e implementamos soluciones de almacenamiento en la nube que ofrecen una escalabilidad ilimitada y una seguridad de nivel empresarial. Más allá del simple almacenamiento, proporcionamos servicios integrales de gestión de datos, copias de seguridad automáticas y planes de recuperación ante desastres, lo que garantiza la integridad y disponibilidad de su información en todo momento. Trabajamos bajo estrictos estándares internacionales de seguridad para que usted tenga total tranquilidad.
                             </p>
                         </div>
                         <div className="rounded-lg overflow-hidden shadow-lg md:order-2">
@@ -134,7 +133,7 @@ const CloudIntegrationContent = () => {
                                 alt="Almacenamiento de Datos en la Nube"
                                 width={600}
                                 height={400}
-                                className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                className="w-full h-84 md:h-120 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
                     </motion.div>
