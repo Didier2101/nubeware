@@ -1,17 +1,15 @@
-// components/services/AISolutionsContent.tsx 
+// components/services/AISolutionsContent.tsx
 'use client';
 
 import { motion } from 'framer-motion';
-import Hero from '@/components/Hero'; // Importa el componente Hero 
+import Hero from '@/components/Hero';
 import Image from 'next/image';
 
-// Imágenes de Unsplash - alta calidad y gratuitas
-const predictiveAnalysisImage = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80';
-
-const computerVisionImage = 'https://images.unsplash.com/photo-1517404215738-15263e9f9178?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80';
-const nlpImage = 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80';
-const intelligentAutomationImage = 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80';
-
+// Imágenes locales (en /public/images/ai-solutions)
+const predictiveAnalysisImage = '/images/ai-solutions/predictive-analysis.avif';
+const computerVisionImage = '/images/ai-solutions/computer-vision.avif';
+const nlpImage = '/images/ai-solutions/nlp.avif';
+const intelligentAutomationImage = '/images/ai-solutions/intelligent-automation.avif';
 
 const contentVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -37,11 +35,11 @@ const AISolutionsContent = () => {
                             ¿Qué Hacemos?
                         </h2>
                         <p className="text-lg text-center text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-                            En <b>Nubeware.ai</b>, diseñamos, desarrollamos e implementamos soluciones de IA que se integran perfectamente en su infraestructura existente. Nos especializamos en la creación de modelos de **Machine Learning** y **Deep Learning** para resolver problemas complejos.
+                            En <b>Nubeware.ai</b>, diseñamos, desarrollamos e implementamos soluciones de IA que se integran perfectamente en su infraestructura existente. Nos especializamos en la creación de modelos de <b>Machine Learning</b> y <b>Deep Learning</b> para resolver problemas complejos.
                         </p>
                     </motion.div>
 
-                    {/* Análisis Predictivo - Imagen izquierda, descripción derecha */}
+                    {/* Análisis Predictivo */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -58,16 +56,17 @@ const AISolutionsContent = () => {
                                 className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
-                        <div className='text-center'>
-                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Análisis Predictivo</h3>
-                            <p className="text-lg  text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <div className="text-center">
+                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+                                Análisis Predictivo
+                            </h3>
+                            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Predecimos tendencias de mercado, comportamiento del consumidor y fallos de equipos para optimizar su estrategia de negocio. Utilizamos algoritmos avanzados de machine learning para analizar patrones históricos y generar insights de valor para su negocio.
                             </p>
-
                         </div>
                     </motion.div>
 
-                    {/* Visión por Computadora - Descripción izquierda, imagen derecha */}
+                    {/* Visión por Computadora */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -76,7 +75,9 @@ const AISolutionsContent = () => {
                         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-16"
                     >
                         <div className="md:order-1 text-center">
-                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Visión por Computadora</h3>
+                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+                                Visión por Computadora
+                            </h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Desarrollamos sistemas de reconocimiento de imágenes y video para control de calidad, seguridad y análisis de datos visuales. Nuestras soluciones incluyen detección de objetos, reconocimiento facial y análisis de comportamiento.
                             </p>
@@ -92,7 +93,7 @@ const AISolutionsContent = () => {
                         </div>
                     </motion.div>
 
-                    {/* NLP - Imagen izquierda, descripción derecha */}
+                    {/* NLP */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -109,15 +110,17 @@ const AISolutionsContent = () => {
                                 className="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
-                        <div className='text-center'>
-                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Procesamiento del Lenguaje Natural (NLP)</h3>
+                        <div className="text-center">
+                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+                                Procesamiento del Lenguaje Natural (NLP)
+                            </h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Creamos chatbots inteligentes, análisis de sentimientos y resúmenes automáticos para mejorar la interacción con sus clientes y el manejo de su información. Implementamos modelos de lenguaje avanzados para comprensión contextual.
                             </p>
                         </div>
                     </motion.div>
 
-                    {/* Automatización Inteligente - Descripción izquierda, imagen derecha */}
+                    {/* Automatización Inteligente */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -126,7 +129,9 @@ const AISolutionsContent = () => {
                         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-16"
                     >
                         <div className="md:order-1 text-center">
-                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Automatización Inteligente</h3>
+                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+                                Automatización Inteligente
+                            </h3>
                             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Diseñamos robots de software (RPA) que combinados con IA, automatizan procesos complejos y liberan a su equipo para tareas estratégicas. Nuestras soluciones reducen errores y aumentan la eficiencia operacional.
                             </p>
@@ -141,8 +146,6 @@ const AISolutionsContent = () => {
                             />
                         </div>
                     </motion.div>
-
-
                 </div>
             </section>
         </>
