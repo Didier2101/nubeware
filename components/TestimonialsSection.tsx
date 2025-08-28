@@ -20,10 +20,10 @@ type Testimonial = {
 // Array de testimonios. Puedes añadir más objetos aquí.
 const testimonials: Testimonial[] = [
     {
-        quote: "La experiencia de trabajar con Germán González para Total Electronic Solutions y su marca SensorTES ha sido muy enriquecedora, ya que sus aportes a los proyectos propuestos han sido muy constructivos, agregando gran valor a los productos. La innovación y el reto de proponer nuevos productos tecnológicos al mercado requiere de personas con él con experiencia, conocimientos y una solida formación tecnológica. Germán González es un ser humano de actitud positiva, integro, amplia preparación y experiencia profesional, creativo y gran capacidad de trabajo. Recomendamos ampliamente sus servicios.",
-        author: "Ing. Freddy Forero",
-        role: "Representante Legal - Gerente General, Total Electronic Solutions Ltda. - SensorTES",
-        date: "Agosto 18 de 2025",
+        "quote": "La experiencia de trabajar con Nubeware.ai ha sido altamente positiva, ya que sus soluciones tecnológicas han aportado gran valor a los proyectos desarrollados. La innovación, la visión estratégica y el enfoque en proponer nuevas soluciones al mercado son factores que marcan una diferencia significativa. Nubeware.ai se destaca por su solidez técnica, profesionalismo y capacidad para ofrecer resultados de alto impacto. Recomendamos ampliamente sus servicios.",
+        "author": "Ing. Freddy Forero",
+        "role": "Representante Legal - Gerente General, Total Electronic Solutions Ltda. - SensorTES",
+        "date": "Agosto 18 de 2025",
         website: "https://sensortes.com/", // Agregado el sitio web
     },
     // Añade más testimonios aquí en el futuro
