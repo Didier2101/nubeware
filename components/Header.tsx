@@ -81,7 +81,7 @@ const Header = () => {
                 onMouseLeave={() => setIsServicesMenuOpen(false)}
             >
                 <button className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">
-                    Servicios <ChevronDown size={16} className={`ml-1 transition-transform duration-200 ${isServicesMenuOpen ? 'rotate-180' : 'rotate-0'}`} />
+                    Productos <ChevronDown size={16} className={`ml-1 transition-transform duration-200 ${isServicesMenuOpen ? 'rotate-180' : 'rotate-0'}`} />
                 </button>
                 <AnimatePresence>
                     {isServicesMenuOpen && (

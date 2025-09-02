@@ -35,7 +35,7 @@ const Logo = () => {
                 <span
                     className={`${montserrat.className}  -ml-2 text-sm md:text-xl font-bold text-blue-600 dark:text-blue-400 tracking-wide`}
                 >
-                    NUBEWARE.AI
+                    NUBEWARE.ai
                 </span>
             </Link>
         </motion.div>
