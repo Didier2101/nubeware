@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 // Imágenes locales (en /public/images/ai-solutions)
 const predictiveAnalysisImage = '/images/ai-solutions/predictive-analysis.png';
-const computerVisionImage = '/images/ai-solutions/computer-vision.png';
+// const computerVisionImage = '/images/ai-solutions/computer-vision.png';
 const nlpImage = '/images/ai-solutions/nlp.png';
 const intelligentAutomationImage = '/images/ai-solutions/intelligent-automation.png';
 
@@ -67,7 +67,7 @@ const AISolutionsContent = () => {
                     </motion.div>
 
                     {/* Visión por Computadora */}
-                    <motion.div
+                    {/* <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}
@@ -91,7 +91,7 @@ const AISolutionsContent = () => {
                                 className="w-full h-84 md:h-120 object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
-                    </motion.div>
+                    </motion.div> */}
 
                     {/* NLP */}
                     <motion.div
@@ -101,7 +101,7 @@ const AISolutionsContent = () => {
                         variants={contentVariants}
                         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-16"
                     >
-                        <div className="rounded-lg overflow-hidden shadow-lg">
+                        <div className="rounded-lg overflow-hidden shadow-lg md:order-1 text-center">
                             <Image
                                 src={nlpImage}
                                 alt="Procesamiento del Lenguaje Natural"
@@ -136,7 +136,7 @@ const AISolutionsContent = () => {
                                 La Automatización Inteligente combina la robótica de procesos (RPA) con la inteligencia artificial para ir más allá de la simple automatización de tareas repetitivas. Diseñamos robots de software que no solo ejecutan procesos, sino que también toman decisiones, aprenden de su entorno y se adaptan a nuevas situaciones. Nuestras soluciones automatizan flujos de trabajo complejos, desde la gestión de documentos hasta la entrada de datos en múltiples sistemas, reduciendo drásticamente los errores humanos, incrementando la eficiencia operacional y permitiendo a su equipo concentrarse en iniciativas estratégicas de mayor valor.
                             </p>
                         </div>
-                        <div className="rounded-lg overflow-hidden shadow-lg md:order-2">
+                        <div className="rounded-lg overflow-hidden shadow-lg">
                             <Image
                                 src={intelligentAutomationImage}
                                 alt="Automatización Inteligente"

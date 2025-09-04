@@ -7,10 +7,11 @@ import { useState, useEffect } from 'react';
 import Logo from './Logo';
 
 const services = [
-    { name: 'Soluciones de IA', href: '/services/ai-solutions' },
-    { name: 'Integración en la Nube', href: '/services/cloud-integration' },
-    { name: 'Software a Medida', href: '/services/custom-software' },
-    { name: 'Soluciones de Hardware', href: '/services/hardware-solutions' },
+    { name: 'RAC', href: '/productos/RAC' },
+    { name: 'Soluciones de IA', href: '/productos/ai-solutions' },
+    { name: 'Integración en la Nube', href: '/productos/cloud-integration' },
+    { name: 'Software a Medida', href: '/productos/custom-software' },
+    { name: 'Soluciones de Hardware', href: '/productos/hardware-solutions' },
 ];
 
 const Header = () => {

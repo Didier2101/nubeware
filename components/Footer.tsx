@@ -61,34 +61,12 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Columna 3: Legal */}
-                <div>
-                    <h4 className="text-lg font-semibold text-white mb-4">Información Legal</h4>
-                    <ul className="space-y-2 text-sm">
-                        <li>
-                            <Link href="/terms" className="hover:text-blue-400 transition-colors">
-                                Términos y Condiciones
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/privacy" className="hover:text-blue-400 transition-colors">
-                                Política de Privacidad
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/cookies" className="hover:text-blue-400 transition-colors">
-                                Política de Cookies
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-
                 {/* Columna 4: Redes Sociales */}
                 <div>
                     <h4 className="text-lg font-semibold text-white mb-4">Síguenos</h4>
                     <div className="flex space-x-4">
                         <a
-                            href="#"
+                            href="https://www.linkedin.com/company/nubeware/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-gray-400 hover:text-blue-400 transition-colors"

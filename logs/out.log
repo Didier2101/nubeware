@@ -1,0 +1,46 @@
+   ▲ Next.js 15.4.6
+   - Local:        http://localhost:3000
+   - Network:      http://0.0.0.0:3000
+
+ ✓ Starting...
+ ✓ Ready in 1419ms
+
+> nubeware@0.1.0 start
+> next start -H 0.0.0.0 -p ${PORT:-3000}
+
+   ▲ Next.js 15.4.6
+   - Local:        http://localhost:3000
+   - Network:      http://0.0.0.0:3000
+
+ ✓ Starting...
+ ✓ Ready in 1428ms
+
+> nubeware@0.1.0 start
+> next start -H 0.0.0.0 -p ${PORT:-3000}
+
+   ▲ Next.js 15.4.6
+   - Local:        http://localhost:3000
+   - Network:      http://0.0.0.0:3000
+
+ ✓ Starting...
+ ✓ Ready in 1450ms
+
+> nubeware@0.1.0 start
+> next start -H 0.0.0.0 -p ${PORT:-3000}
+
+   ▲ Next.js 15.4.6
+   - Local:        http://localhost:3000
+   - Network:      http://0.0.0.0:3000
+
+ ✓ Starting...
+ ✓ Ready in 1714ms
+
+> nubeware@0.1.0 start
+> next start -H 0.0.0.0 -p ${PORT:-3000}
+
+   ▲ Next.js 15.4.6
+   - Local:        http://localhost:3000
+   - Network:      http://0.0.0.0:3000
+
+ ✓ Starting...
+ ✓ Ready in 1415ms
