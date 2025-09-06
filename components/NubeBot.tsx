@@ -18,6 +18,9 @@ const NubeBot = ({ onClose }: { onClose: () => void }) => {
     const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
+    // URL base de la API RAG
+    const API_BASE = 'http://localhost:5058/api';
+
     // Variantes de animación para el contenedor del chat
     const chatContainerVariants: Variants = {
         hidden: { opacity: 0, scale: 0.8, y: 50 },
@@ -30,7 +33,7 @@ const NubeBot = ({ onClose }: { onClose: () => void }) => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages]);
 
-    // Función que ahora consume la API de tu backend de Python
+    // Función que consume la API RAG
     const handleSendMessage = async (e: FormEvent) => {
         e.preventDefault();
         if (input.trim() === '' || isLoading) return;
@@ -41,25 +44,33 @@ const NubeBot = ({ onClose }: { onClose: () => void }) => {
         setIsLoading(true);
 
         try {
-            // Reemplazamos la llamada de prueba con una solicitud POST a tu API
-            const response = await fetch("http://192.168.2.47:5001/api/ask", {
-                method: "POST",
+            // Usando la API RAG
+            const response = await fetch(`${API_BASE}/rag_query`, {
+                method: 'POST',
                 headers: {
-                    "Content-Type": "application/json",
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ message: userMessage }),
+                body: JSON.stringify({
+                    username: 'user',
+                    query: userMessage
+                })
             });
 
             if (!response.ok) {
-                // Manejar errores HTTP, por ejemplo, 404, 500, etc.
                 throw new Error(`Error en el servidor: ${response.status}`);
             }
 
             const data = await response.json();
-            setMessages((prev) => [...prev, { sender: 'bot', text: data.message }]);
+            setMessages((prev) => [...prev, {
+                sender: 'bot',
+                text: data.answer || data.message || 'No response received'
+            }]);
         } catch (error) {
             console.error('Error al enviar mensaje:', error);
-            setMessages((prev) => [...prev, { sender: 'bot', text: 'Lo siento, hubo un error al conectar con el servidor. Por favor, revisa la consola para más detalles.' }]);
+            setMessages((prev) => [...prev, {
+                sender: 'bot',
+                text: 'Lo siento, hubo un error al conectar con el servidor RAG.'
+            }]);
         } finally {
             setIsLoading(false);
         }
@@ -100,7 +111,7 @@ const NubeBot = ({ onClose }: { onClose: () => void }) => {
                 {messages.length === 0 && (
                     <div className="flex flex-col items-center justify-center h-full text-center text-gray-400 dark:text-gray-500">
                         <Bot size={48} className="mb-2" />
-                        <p>¡Hola! Soy NubeBot, tu asistente virtual de Nubeware.ai. ¿En qué puedo ayudarte?</p>
+                        <p>¡Hola! Soy NubeBot, tu asistente virtual. Consulto documentos usando RAG. ¿En qué puedo ayudarte?</p>
                     </div>
                 )}
                 {messages.map((msg, index) => (
@@ -110,8 +121,8 @@ const NubeBot = ({ onClose }: { onClose: () => void }) => {
                     >
                         <div
                             className={`flex items-start gap-2 max-w-[80%] rounded-xl p-3 shadow-sm ${msg.sender === 'user'
-                                    ? 'bg-blue-500 text-white rounded-br-none'
-                                    : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-bl-none'
+                                ? 'bg-blue-500 text-white rounded-br-none'
+                                : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-bl-none'
                                 }`}
                         >
                             {msg.sender === 'bot' && (
@@ -119,13 +130,6 @@ const NubeBot = ({ onClose }: { onClose: () => void }) => {
                             )}
                             <div className="flex-1">
                                 {renderMessageText(msg.text)}
-                                {isLoading && msg.sender === 'bot' && (
-                                    <div className="flex items-center justify-center space-x-2 mt-2">
-                                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-75"></div>
-                                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-150"></div>
-                                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-300"></div>
-                                    </div>
-                                )}
                             </div>
                             {msg.sender === 'user' && (
                                 <User size={20} className="mt-1 flex-shrink-0" />
