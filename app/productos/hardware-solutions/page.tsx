@@ -1,4 +1,4 @@
-import HardwareSolutionsContent from '@/components/services/HardwareSolutionsContent';
+import HardwareSolutionsContent from '@/components/productos/HardwareSolutionsContent';
 
 export const metadata = {
     title: 'Soluciones de Hardware - Nubeware.ai',

@@ -1,4 +1,4 @@
-import CloudIntegrationContent from '@/components/services/CloudIntegrationContent';
+import CloudIntegrationContent from '@/components/productos/CloudIntegrationContent';
 
 export const metadata = {
     title: 'Integración en la Nube - Nubeware.ai',

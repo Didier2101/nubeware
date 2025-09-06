@@ -2,7 +2,7 @@
 
 import { motion, Variants } from 'framer-motion';
 import { Brain, Cloud, Code2, ShieldCheck, TrendingUp, HeartHandshake, Puzzle, Workflow, Handshake, Cpu, } from 'lucide-react';
-import CardService from '../services/CardService';
+import CardService from '../productos/CardService';
 import Hero from '../Hero';
 import ClientsSection from '../ClientsSection';
 import TestimonialsSection from '../TestimonialsSection';

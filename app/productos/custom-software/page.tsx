@@ -1,4 +1,4 @@
-import CustomSoftwareContent from '@/components/services/CustomSoftwareContent';
+import CustomSoftwareContent from '@/components/productos/CustomSoftwareContent';
 
 export const metadata = {
     title: 'Software a Medida - Nubeware.ai',

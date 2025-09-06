@@ -1,5 +1,5 @@
 // app/services/ai-solutions/page.tsx
-import AISolutionsContent from '@/components/services/AISolutionsContent';
+import AISolutionsContent from '@/components/productos/AISolutionsContent';
 
 export const metadata = {
     title: 'Soluciones de IA - Nubeware.ai',

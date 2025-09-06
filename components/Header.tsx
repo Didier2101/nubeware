@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import Logo from './Logo';
 
 const services = [
-    { name: 'RAC', href: '/productos/RAC' },
+    { name: 'RAG', href: '/productos/RAG' },
     { name: 'Soluciones de IA', href: '/productos/ai-solutions' },
     { name: 'Integración en la Nube', href: '/productos/cloud-integration' },
     { name: 'Software a Medida', href: '/productos/custom-software' },
