@@ -76,7 +76,7 @@ const NubeBot = ({ onClose }: { onClose: () => void }) => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed bottom-24 right-6 md:right-10 z-[60] bg-white dark:bg-gray-800 rounded-xl shadow-2xl flex flex-col w-[90vw] max-w-sm h-[70vh] max-h-[600px] border border-gray-200 dark:border-gray-700 font-montserrat"
+            className="fixed bottom-24  right-6 md:right-10 z-[60] bg-white dark:bg-gray-800 rounded-xl shadow-2xl flex flex-col w-[90vw] max-w-sm h-[70vh] max-h-[600px] border border-gray-200 dark:border-gray-700 font-montserrat"
         >
             {/* Encabezado del chat */}
             <div className="flex items-center justify-between p-4 bg-gray-100 dark:bg-gray-700 rounded-t-xl border-b border-gray-200 dark:border-gray-600">
@@ -110,8 +110,8 @@ const NubeBot = ({ onClose }: { onClose: () => void }) => {
                     >
                         <div
                             className={`flex items-start gap-2 max-w-[80%] rounded-xl p-3 shadow-sm ${msg.sender === 'user'
-                                    ? 'bg-blue-500 text-white rounded-br-none'
-                                    : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-bl-none'
+                                ? 'bg-blue-500 text-white rounded-br-none'
+                                : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-bl-none'
                                 }`}
                         >
                             {msg.sender === 'bot' && (
