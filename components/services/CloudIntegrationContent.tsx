@@ -2,13 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
-import Image from 'next/image';
-
-// Importamos imágenes locales desde la carpeta /public/images/cloud
-import cloudMigrationImage from '@/public/images/cloud/cloud-migration.png';
-import hybridCloudImage from '@/public/images/cloud/hybrid-cloud.png';
-import serverlessImage from '@/public/images/cloud/serverless.png';
-import dataStorageImage from '@/public/images/cloud/data-storage.png';
 
 const contentVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -47,8 +40,8 @@ const CloudIntegrationContent = () => {
                         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12"
                     >
                         <div className="rounded-lg overflow-hidden shadow-lg">
-                            <Image
-                                src={cloudMigrationImage}
+                            <img
+                                src="/images/cloud/cloud-migration.png"
                                 alt="Migración a la Nube"
                                 width={600}
                                 height={400}
@@ -78,8 +71,8 @@ const CloudIntegrationContent = () => {
                             </p>
                         </div>
                         <div className="rounded-lg overflow-hidden shadow-lg md:order-2">
-                            <Image
-                                src={hybridCloudImage}
+                            <img
+                                src="/images/cloud/hybrid-cloud.png"
                                 alt="Soluciones de Nube Híbrida"
                                 width={600}
                                 height={400}
@@ -97,8 +90,8 @@ const CloudIntegrationContent = () => {
                         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-16"
                     >
                         <div className="rounded-lg overflow-hidden shadow-lg">
-                            <Image
-                                src={serverlessImage}
+                            <img
+                                src="/images/cloud/serverless.png"
                                 alt="Servicios Serverless"
                                 width={600}
                                 height={400}
@@ -128,8 +121,8 @@ const CloudIntegrationContent = () => {
                             </p>
                         </div>
                         <div className="rounded-lg overflow-hidden shadow-lg md:order-2">
-                            <Image
-                                src={dataStorageImage}
+                            <img
+                                src="/images/cloud/data-storage.png"
                                 alt="Almacenamiento de Datos en la Nube"
                                 width={600}
                                 height={400}
