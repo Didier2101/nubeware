@@ -13,7 +13,7 @@ const Footer = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gray-900 text-gray-300 py-12"
+            className="text-gray-300 py-12"
         >
             <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
 

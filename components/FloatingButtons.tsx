@@ -1,27 +1,19 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronUp, Phone, MessageSquare } from 'lucide-react';
+import { ChevronUp, Phone } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import NubeBot from './NubeBot';
 
 const FloatingButtons = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const [isChatOpen, setIsChatOpen] = useState(false);
 
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const handleScroll = () => {
-        if (window.scrollY > 300) {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
+        if (window.scrollY > 300) setIsVisible(true);
+        else setIsVisible(false);
     };
 
     useEffect(() => {
@@ -34,27 +26,18 @@ const FloatingButtons = () => {
 
     const buttonVariants = {
         hidden: { opacity: 0, y: 50, scale: 0.8 },
-        visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 200, damping: 20 } },
-        tap: { scale: 0.95 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: { type: 'spring', stiffness: 200, damping: 20 },
+        },
+        tap: { scale: 0.9 },
     } as const;
 
     return (
         <>
             <AnimatePresence>
-                {/* Botón del Chatbot */}
-                <motion.button
-                    key="open-chatbot"
-                    variants={buttonVariants}
-                    initial="hidden"
-                    animate="visible"
-                    whileTap="tap"
-                    onClick={() => setIsChatOpen(!isChatOpen)}
-                    className="fixed bottom-24 right-6 md:right-10 z-50 p-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition-colors duration-300 focus:outline-none"
-                    aria-label="Abrir chatbot"
-                >
-                    <MessageSquare size={24} />
-                </motion.button>
-
                 {isVisible && (
                     <motion.button
                         key="scroll-to-top"
@@ -64,10 +47,20 @@ const FloatingButtons = () => {
                         exit="hidden"
                         whileTap="tap"
                         onClick={scrollToTop}
-                        className="fixed bottom-36 right-6 md:right-10 z-50 p-3 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-colors duration-300 focus:outline-none"
                         aria-label="Volver arriba"
+                        className="
+                            fixed bottom-24 right-6 md:right-10 z-50 p-4 rounded-full
+                            bg-gradient-to-br from-cyan-500 via-blue-700 to-indigo-800
+                            text-white
+                            border border-cyan-400/40
+                            shadow-[0_0_15px_rgba(0,255,255,0.25)]
+                            hover:shadow-[0_0_25px_rgba(0,255,255,0.45)]
+                            hover:scale-105
+                            transition-all duration-300
+                            backdrop-blur-md
+                        "
                     >
-                        <ChevronUp size={24} />
+                        <ChevronUp size={22} className="drop-shadow-[0_0_6px_rgba(0,255,255,0.5)]" />
                     </motion.button>
                 )}
             </AnimatePresence>
@@ -81,16 +74,21 @@ const FloatingButtons = () => {
                 initial="hidden"
                 animate="visible"
                 whileTap="tap"
-                className="fixed bottom-6 right-6 md:right-10 z-50 p-3 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-colors duration-300"
                 aria-label="Contactar por WhatsApp"
+                className="
+                    fixed bottom-6 right-6 md:right-10 z-50 p-4 rounded-full
+                    bg-gradient-to-br from-emerald-400 via-green-600 to-emerald-800
+                    text-white
+                    border border-green-400/40
+                    shadow-[0_0_15px_rgba(0,255,128,0.25)]
+                    hover:shadow-[0_0_25px_rgba(0,255,128,0.45)]
+                    hover:scale-105
+                    transition-all duration-300
+                    backdrop-blur-md
+                "
             >
-                <Phone size={24} />
+                <Phone size={22} className="drop-shadow-[0_0_6px_rgba(0,255,128,0.5)]" />
             </motion.a>
-
-            {/* Componente del Chatbot */}
-            <AnimatePresence>
-                {isChatOpen && <NubeBot onClose={() => setIsChatOpen(false)} />}
-            </AnimatePresence>
         </>
     );
 };

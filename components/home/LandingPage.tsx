@@ -1,36 +1,44 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { Brain, Cloud, Code2, ShieldCheck, TrendingUp, HeartHandshake, Puzzle, Workflow, Handshake, Cpu, } from 'lucide-react';
+import {
+    Brain, Cloud, Code2, ShieldCheck, TrendingUp, HeartHandshake,
+    Puzzle, Workflow, Handshake, Cpu
+} from 'lucide-react';
 import CardService from '../services/CardService';
 import Hero from '../Hero';
 import ClientsSection from '../ClientsSection';
 import TestimonialsSection from '../TestimonialsSection';
 
-
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        transition: {
-            staggerChildren: 0.2,
-        },
+        transition: { staggerChildren: 0.2 },
     },
 };
 
 const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { type: 'spring', stiffness: 100, damping: 15 },
+    },
 };
 
 const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: 'easeOut' },
+    },
 };
 
 export default function LandingPage() {
     return (
-        <div className="transition-colors duration-300 min-h-screen">
+        <div className="transition-colors duration-300 min-h-screen bg-gray-900 text-gray-100">
             {/* Sección de Héroe */}
             <Hero
                 title="Software, Hardware, Nubeware."
@@ -39,10 +47,10 @@ export default function LandingPage() {
                 buttonLink="/services"
             />
 
-            {/* Nueva Sección de Clientes */}
+            {/* Sección de Clientes */}
             <ClientsSection />
 
-            {/* Sección de Servicios Principales */}
+            {/* Servicios Principales */}
             <section className="py-24">
                 <div className="container mx-auto px-6 text-center">
                     <motion.h2
@@ -50,7 +58,7 @@ export default function LandingPage() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}
-                        className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4"
+                        className="text-4xl md:text-6xl font-bold text-gray-300 mb-4"
                     >
                         Nuestros Servicios Principales
                     </motion.h2>
@@ -59,7 +67,7 @@ export default function LandingPage() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}
-                        className="text-lg text-gray-600 dark:text-gray-300 mb-16 max-w-3xl mx-auto"
+                        className="text-lg text-gray-100 mb-16 max-w-3xl mx-auto"
                     >
                         Descubre cómo podemos transformar tu negocio con nuestras soluciones especializadas
                     </motion.p>
@@ -98,7 +106,7 @@ export default function LandingPage() {
                         <motion.div variants={itemVariants}>
                             <CardService
                                 title="Servicios en la Nube"
-                                description="Integración y migración a la nube con arquitecturas que permiten obtener mayor escalabilidad, seguridad y economía"
+                                description="Integración y migración a la nube con arquitecturas que permiten obtener mayor escalabilidad, seguridad y economía."
                                 icon={<Cloud size={32} />}
                                 link="/services/cloud-integration"
                             />
@@ -107,17 +115,15 @@ export default function LandingPage() {
                 </div>
             </section>
 
-            <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent my-16" />
-
-            {/* Sección de Por qué elegirnos */}
-            <section className="py-24 bg-gray-50 dark:bg-gray-900/50">
+            {/* Por qué elegirnos */}
+            <section className="py-24">
                 <div className="container mx-auto px-6 text-center">
                     <motion.h2
                         variants={sectionVariants}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}
-                        className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-16"
+                        className="text-4xl md:text-5xl font-bold text-gray-300 mb-16"
                     >
                         ¿Por qué elegirnos?
                     </motion.h2>
@@ -153,7 +159,7 @@ export default function LandingPage() {
                 </div>
             </section>
 
-            {/* Sección de Metodología */}
+            {/* Metodología */}
             <section className="py-24">
                 <div className="container mx-auto px-6 text-center">
                     <motion.h2
@@ -161,7 +167,7 @@ export default function LandingPage() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}
-                        className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-16"
+                        className="text-4xl md:text-5xl font-bold text-gray-300 mb-16"
                     >
                         Nuestra Metodología
                     </motion.h2>
@@ -197,7 +203,7 @@ export default function LandingPage() {
                 </div>
             </section>
 
-            {/* Nueva Sección de Reseñas */}
+            {/* Reseñas */}
             <TestimonialsSection />
         </div>
     );

@@ -3,8 +3,8 @@
 
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
-import { ChevronDown, Shield, User, FileText, Mail, Building } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { Shield, User, FileText, Mail, Building } from 'lucide-react';
+
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -22,20 +22,8 @@ const itemVariants: Variants = {
 };
 
 export default function PrivacyPolicy() {
-    const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 20) {
-                setShowScrollIndicator(false);
-            } else {
-                setShowScrollIndicator(true);
-            }
-        };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     const policySections = [
         {
@@ -61,14 +49,8 @@ export default function PrivacyPolicy() {
     ];
 
     return (
-        <div className="min-h-screen bg-gray-50 pb-10 dark:bg-gray-950 overflow-hidden relative transition-colors duration-300">
+        <div className="min-h-screen   overflow-hidden relative transition-colors duration-300">
 
-            {/* Fondo de blobs animados */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob-1 dark:bg-purple-700"></div>
-                <div className="absolute top-20 right-20 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob-2 dark:bg-blue-700"></div>
-                <div className="absolute bottom-20 -right-4 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob-1 dark:bg-indigo-700"></div>
-            </div>
 
             {/* Hero Section */}
             <div className="container mx-auto px-6  text-center z-10 flex flex-col items-center justify-center min-h-[70vh] pt-16">
@@ -103,27 +85,6 @@ export default function PrivacyPolicy() {
                 </motion.div>
             </div>
 
-            {/* Flecha de "scroll" animada */}
-            {showScrollIndicator && (
-                <motion.div
-                    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-500 dark:text-gray-400 z-10"
-                    initial={{ y: -20, opacity: 0 }}
-                    animate={{
-                        y: 0,
-                        opacity: 1,
-                        transition: {
-                            delay: 1.5,
-                            duration: 0.8,
-                            repeat: Infinity,
-                            repeatType: 'reverse',
-                            ease: 'easeInOut'
-                        }
-                    }}
-                >
-                    <ChevronDown size={32} />
-                </motion.div>
-            )}
-
             {/* Contenido Principal */}
             <div id="content" className="relative z-10">
                 <div className="container mx-auto px-6 max-w-6xl">
@@ -139,7 +100,7 @@ export default function PrivacyPolicy() {
                             <motion.div
                                 key={index}
                                 whileHover={{ scale: 1.05 }}
-                                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+                                className=" p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
                             >
                                 <section.icon className="w-12 h-12 text-blue-600 dark:text-blue-400 mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center">
@@ -244,7 +205,7 @@ export default function PrivacyPolicy() {
                             </p>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                 {['Legalidad', 'Finalidad', 'Libertad', 'Veracidad o calidad', 'Transparencia', 'Seguridad', 'Confidencialidad', 'Acceso y circulación restringida'].map((principle, index) => (
-                                    <div key={index} className="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg text-center">
+                                    <div key={index} className="border border-white/50 p-3 rounded-lg text-center">
                                         <span className="font-medium text-gray-900 dark:text-white">{principle}</span>
                                     </div>
                                 ))}

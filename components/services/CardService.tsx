@@ -1,4 +1,3 @@
-// components/CardService.tsx
 'use client';
 
 import { motion } from 'framer-motion';
@@ -9,101 +8,89 @@ interface CardServiceProps {
     title: string;
     description: string;
     icon: ReactNode;
-    link?: string; // Opcional para agregar enlaces
-    gradient?: boolean; // Para cards con gradiente
-    featured?: boolean; // Para destacar ciertos cards
+    link?: string;
+    featured?: boolean;
 }
 
-const CardService = ({ title, description, icon, link, gradient = false, featured = false }: CardServiceProps) => {
-    const cardContent = (
+const CardService = ({ title, description, icon, link, featured = false }: CardServiceProps) => {
+    const card = (
         <motion.div
             className={`
-                group relative overflow-hidden rounded-xl transition-all duration-300 cursor-pointer h-full
-                ${gradient
-                    ? 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-[1px]'
-                    : ''
-                }
-                ${featured
-                    ? 'hover:shadow-xl'
-                    : 'hover:shadow-lg'
-                }
-            `}
-            whileHover={{ y: -4 }}
-            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+        group relative overflow-hidden rounded-2xl p-[1px]
+        bg-gradient-to-br from-cyan-500/30 via-blue-700/20 to-indigo-800/30
+        shadow-[0_0_15px_rgba(0,255,255,0.05)]
+        transition-all duration-300
+        hover:shadow-[0_0_25px_rgba(0,255,255,0.25)]
+        h-full
+      `}
+            whileHover={{ y: -6 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 22 }}
         >
-            <div className={`
-                h-full rounded-xl px-8 py-10 transition-all duration-300
-                ${gradient
-                    ? 'bg-white dark:bg-gray-900'
-                    : 'bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700'
-                }
-                ${featured
-                    ? 'border-2 border-blue-500/20 dark:border-blue-400/20'
-                    : ''
-                }
-                group-hover:border-blue-200 dark:group-hover:border-blue-600
-            `}>
+            {/* Fondo interior oscuro y translúcido */}
+            <div
+                className="
+          relative h-full rounded-2xl bg-gradient-to-br from-gray-900/90 via-gray-900/95 to-gray-950/90
+          border border-cyan-400/20 backdrop-blur-xl p-8 flex flex-col
+          transition-all duration-300 group-hover:border-cyan-400/40
+        "
+            >
+                {/* Glow animado decorativo */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500" />
 
-                {/* Badge para featured */}
+                {/* Badge opcional */}
                 {featured && (
-                    <div className="absolute -top-1 -right-1">
-                        <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                            Popular
-                        </div>
+                    <div className="absolute -top-2 right-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                        Recomendado
                     </div>
                 )}
 
-                {/* Icono */}
-                <div className="relative mb-6">
-                    <motion.div
-                        className={`
-                            inline-flex items-center justify-center w-16 h-16 rounded-2xl transition-all duration-300
-                            ${gradient || featured
-                                ? 'bg-gradient-to-br from-blue-500 to-purple-500 text-white shadow-lg'
-                                : 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400 shadow-md'
-                            }
-                            group-hover:shadow-lg group-hover:scale-105
-                        `}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
-                    >
-                        {icon}
-                    </motion.div>
-                </div>
+                {/* Icono con efecto */}
+                <motion.div
+                    className="
+            relative w-16 h-16 mb-6 mx-auto flex items-center justify-center rounded-2xl
+            bg-gradient-to-br from-cyan-600/20 to-indigo-700/20 text-cyan-400
+            shadow-[0_0_20px_rgba(0,255,255,0.2)] group-hover:shadow-[0_0_30px_rgba(0,255,255,0.3)]
+            border border-cyan-400/30
+          "
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.2 }}
+                >
+                    {icon}
+                </motion.div>
 
-                {/* Contenido */}
-                <div className="relative">
-                    <h3 className={`
-                        text-2xl font-bold mb-4 transition-colors duration-300
-                        ${gradient || featured
-                            ? 'text-gray-900 dark:text-white'
-                            : 'text-gray-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-300'
-                        }
-                    `}>
-                        {title}
-                    </h3>
+                {/* Título */}
+                <h3
+                    className="
+            text-xl font-bold mb-3 text-cyan-200
+            group-hover:text-cyan-100 transition-colors duration-300
+          "
+                >
+                    {title}
+                </h3>
 
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 transition-colors duration-300">
-                        {description}
-                    </p>
+                {/* Descripción */}
+                <p className="text-gray-400 leading-relaxed text-sm flex-grow">
+                    {description}
+                </p>
 
-                    {/* Call to action - solo si hay link */}
-                    {link && (
-                        <div className="flex items-center text-blue-600 dark:text-blue-400 font-semibold text-sm group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">
-                            <span>Saber más</span>
+                {/* CTA */}
+                {link && (
+                    <div className="mt-6">
+                        <div className="flex items-center justify-center text-cyan-400 text-sm font-semibold group-hover:text-cyan-300 transition-all duration-300">
+                            Saber más
                             <motion.svg
                                 className="ml-2 w-4 h-4"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
-                                whileHover={{ x: 2 }}
+                                whileHover={{ x: 3 }}
                                 transition={{ duration: 0.2 }}
                             >
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </motion.svg>
                         </div>
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
         </motion.div>
     );
@@ -111,12 +98,12 @@ const CardService = ({ title, description, icon, link, gradient = false, feature
     if (link) {
         return (
             <Link href={link} className="block h-full">
-                {cardContent}
+                {card}
             </Link>
         );
     }
 
-    return cardContent;
+    return card;
 };
 
 export default CardService;

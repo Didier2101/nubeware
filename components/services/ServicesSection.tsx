@@ -23,7 +23,7 @@ const itemVariants: Variants = {
 
 const ServicesSection = () => {
     return (
-        <div className="bg-gray-50 dark:bg-gray-950  text-gray-900 dark:text-white transition-colors duration-300 min-h-screen">
+        <div className=" min-h-screen">
             {/* Sección de Héroe (Altura Ajustada) */}
             <Hero
                 title="Nuestros Servicios de Vanguardia"
