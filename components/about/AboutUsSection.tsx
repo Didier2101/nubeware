@@ -18,7 +18,7 @@ const AboutUsSection = () => {
                 subtitle="Conoce más sobre Nubeware.ai, nuestro equipo, historia y la pasión que nos impulsa a democratizar la Inteligencia Artificial."
             />
 
-            <section className="relative py-24 overflow-hidden bg-gray-900 text-gray-100">
+            <section className="relative py-24 overflow-hidden  text-gray-100">
                 <div className="container mx-auto px-6 max-w-7xl relative z-10">
                     {/* Misión y Visión */}
                     <motion.div
@@ -129,7 +129,7 @@ const AboutUsSection = () => {
                                     key={i}
                                     whileHover={{ y: -6 }}
                                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                                    className="relative p-8 rounded-2xl border border-white/10 bg-gray-800/30 backdrop-blur-sm shadow-lg"
+                                    className="relative p-8 "
                                 >
                                     <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500/30 to-purple-600/30 shadow-inner">
                                         {value.icon}

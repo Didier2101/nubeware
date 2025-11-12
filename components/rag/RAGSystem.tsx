@@ -22,11 +22,11 @@ export default function RAGSystem() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     return (
-        <div className="h-screen bg-white overflow-hidden">
+        <div className="h-screen overflow-hidden">
             {/* Desktop Layout */}
             <div className="hidden lg:flex h-full">
                 {/* Sidebar fijo en desktop */}
-                <div className="w-80 flex-shrink-0 border-r border-gray-200 bg-white">
+                <div className="w-80 flex-shrink-0 ">
                     <FileSidebar
                         files={files}
                         onUpload={uploadFile}
@@ -58,7 +58,7 @@ export default function RAGSystem() {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
-                                className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+                                className="fixed inset-0 bg-black/60 z-40 lg:hidden"
                                 onClick={() => setSidebarOpen(false)}
                             />
                         )}
@@ -74,7 +74,7 @@ export default function RAGSystem() {
                                     damping: 25,
                                     stiffness: 200
                                 }}
-                                className="fixed bottom-0 left-0 right-0 z-50 bg-white shadow-2xl rounded-t-2xl max-h-[85vh] lg:hidden"
+                                className="fixed bottom-0 left-0 right-0 z-50 rounded-t-2xl max-h-[85vh] lg:hidden border border-gray-700/50 backdrop-blur-xl"
                             >
                                 <FileSidebar
                                     files={files}

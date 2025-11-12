@@ -74,34 +74,33 @@ export default function FileSidebar({
     };
 
     return (
-        <div className="h-full flex flex-col bg-white border-r border-gray-200 lg:rounded-none rounded-t-2xl">
+        <div className="h-full flex flex-col lg:rounded-none rounded-t-2xl">
             {/* Header */}
-            <div className="border-b border-gray-100 p-4">
-                {/* Handle para arrastrar - solo en mobile */}
+            <div className="p-6">
                 {onClose && (
-                    <div className="flex justify-center mb-3 lg:hidden">
-                        <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
+                    <div className="flex justify-center mb-4 lg:hidden">
+                        <div className="w-12 h-1.5 bg-gray-600 rounded-full"></div>
                     </div>
                 )}
 
                 <div className="flex items-center justify-between">
-                    <h2 className="font-semibold text-gray-900 text-lg">
+                    <h2 className="font-semibold text-gray-100 text-lg">
                         Documentos ({files.length})
                     </h2>
                     <div className="flex items-center space-x-2">
                         <button
                             onClick={onRefresh}
-                            className="p-1 hover:bg-gray-100 rounded transition-colors"
+                            className="p-2 hover:bg-gray-700/30 rounded-lg transition-colors"
                             title="Actualizar"
                         >
-                            <RefreshCw className="w-4 h-4 text-gray-600" />
+                            <RefreshCw className="w-4 h-4 text-gray-400" />
                         </button>
                         {onClose && (
                             <button
                                 onClick={onClose}
-                                className="p-1 hover:bg-gray-100 rounded transition-colors lg:hidden"
+                                className="p-2 hover:bg-gray-700/30 rounded-lg transition-colors lg:hidden"
                             >
-                                <X className="w-4 h-4 text-gray-600" />
+                                <X className="w-4 h-4 text-gray-400" />
                             </button>
                         )}
                     </div>
@@ -109,7 +108,7 @@ export default function FileSidebar({
             </div>
 
             {/* Botón de subir */}
-            <div className="p-4 border-b border-gray-100">
+            <div className="p-6">
                 <input
                     ref={fileInputRef}
                     type="file"
@@ -121,10 +120,10 @@ export default function FileSidebar({
                 <button
                     onClick={() => fileInputRef.current?.click()}
                     disabled={loading}
-                    className="w-full px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center space-x-2 font-medium shadow-sm"
+                    className="w-full px-4 py-3 border-2 border-dashed border-gray-600 text-gray-300 rounded-xl cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 font-medium hover:border-blue-500 hover:text-blue-400"
                 >
                     {loading ? (
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        <div className="w-4 h-4 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
                     ) : (
                         <Upload className="w-4 h-4" />
                     )}
@@ -133,35 +132,35 @@ export default function FileSidebar({
             </div>
 
             {/* Lista de archivos */}
-            <div className="flex-1 overflow-y-auto p-4">
+            <div className="flex-1 overflow-y-auto px-6 pb-6">
                 {files.length === 0 ? (
-                    <div className="text-center py-8 text-gray-500">
-                        <File className="w-12 h-12 mx-auto mb-3 opacity-40" />
-                        <p>No hay documentos</p>
-                        <p className="text-sm mt-2 text-gray-400">
+                    <div className="text-center py-12 text-gray-500">
+                        <File className="w-16 h-16 mx-auto mb-4 opacity-40" />
+                        <p className="text-gray-400">No hay documentos</p>
+                        <p className="text-sm mt-2 text-gray-500">
                             Sube un archivo para comenzar
                         </p>
                     </div>
                 ) : (
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                         {files.map((file) => (
                             <div
                                 key={file.id}
-                                className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group border border-gray-200"
+                                className="flex items-center justify-between p-4 border border-gray-700/50 rounded-xl hover:border-gray-600 transition-all duration-200 group"
                             >
                                 <div className="flex items-center space-x-3 min-w-0 flex-1">
-                                    <File className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                                    <File className="w-5 h-5 text-gray-400 flex-shrink-0" />
                                     <div className="min-w-0 flex-1">
-                                        <p className="text-sm font-medium text-gray-900 truncate">
+                                        <p className="text-sm font-medium text-gray-100 truncate">
                                             {file.name}
                                         </p>
-                                        <p className="text-xs text-gray-500">
+                                        <p className="text-xs text-gray-500 mt-1">
                                             {formatFileSize(file.size)}
                                         </p>
                                     </div>
                                 </div>
-                                <button className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-red-100 rounded">
-                                    <Trash2 className="w-4 h-4 text-gray-400 hover:text-red-500" />
+                                <button className="opacity-0 group-hover:opacity-100 transition-opacity p-2 hover:bg-red-500/10 rounded-lg">
+                                    <Trash2 className="w-4 h-4 text-gray-400 hover:text-red-400" />
                                 </button>
                             </div>
                         ))}

@@ -15,27 +15,19 @@ interface CardServiceProps {
 const CardService = ({ title, description, icon, link, featured = false }: CardServiceProps) => {
     const card = (
         <motion.div
-            className={`
-        group relative overflow-hidden rounded-2xl p-[1px]
-        bg-gradient-to-br from-cyan-500/30 via-blue-700/20 to-indigo-800/30
-        shadow-[0_0_15px_rgba(0,255,255,0.05)]
-        transition-all duration-300
-        hover:shadow-[0_0_25px_rgba(0,255,255,0.25)]
-        h-full
-      `}
+            className={`group relative overflow-hidden  h-full`}
             whileHover={{ y: -6 }}
             transition={{ type: 'spring', stiffness: 300, damping: 22 }}
         >
             {/* Fondo interior oscuro y translúcido */}
             <div
                 className="
-          relative h-full rounded-2xl bg-gradient-to-br from-gray-900/90 via-gray-900/95 to-gray-950/90
-          border border-cyan-400/20 backdrop-blur-xl p-8 flex flex-col
-          transition-all duration-300 group-hover:border-cyan-400/40
+          relative h-full 
+      flex flex-col
+      p-8
         "
             >
-                {/* Glow animado decorativo */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500" />
+
 
                 {/* Badge opcional */}
                 {featured && (

@@ -38,7 +38,7 @@ const sectionVariants: Variants = {
 
 export default function LandingPage() {
     return (
-        <div className="transition-colors duration-300 min-h-screen bg-gray-900 text-gray-100">
+        <div className="transition-colors duration-300 min-h-screen  text-gray-100">
             {/* Sección de Héroe */}
             <Hero
                 title="Software, Hardware, Nubeware."

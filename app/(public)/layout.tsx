@@ -29,15 +29,12 @@ export default function RAGLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${orbitron.variable} scroll-smooth`}>
-      <body className="font-sans min-h-screen relative">
-        <Background>
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <FloatingButtons />
-        </Background>
-      </body>
-    </html>
+    <>
+
+      <Header />
+      <main className="flex-grow">{children}</main>
+      <Footer />
+
+    </>
   );
 }
