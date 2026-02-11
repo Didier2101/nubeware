@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nubeware | RAG Intelligence App</title>
+    <link rel="icon" href="assets/favicon_v2.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/i18n.js"></script>
+    <style>
+        /* Embedded app-specific CSS for better isolation */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .app-layout {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            background: white;
+            position: relative;
+        }
+
+        .sidebar {
+            width: 320px;
+            border-right: 1px solid #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            transition: transform 0.3s ease;
+            z-index: 1001;
+        }
+
+        .main-chat {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #f8fafc;
+            position: relative;
+            width: 100%;
+        }
+
+        .chat-header {
+            height: 64px;
+            border-bottom: 1px solid #f1f5f9;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+        }
+
+        .messages-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .input-area {
+            padding: 1.5rem;
+            background: white;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .input-box {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0.75rem;
+            background: #f1f5f9;
+            padding: 0.5rem;
+            border-radius: 1rem;
+        }
+
+        .bubble {
+            max-width: 80%;
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .user-bubble {
+            align-self: flex-end;
+            background: #0ea5e9;
+            color: white;
+            border-bottom-right-radius: 0.25rem;
+        }
+
+        .ai-bubble {
+            align-self: flex-start;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-bottom-left-radius: 0.25rem;
+        }
+
+        .file-list {
+            padding: 1rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .file-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .file-row:hover {
+            background: #f8fafc;
+        }
+
+        .file-row.active {
+            background: #f0f9ff;
+            color: #0ea5e9;
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #64748b;
+            padding: 0.5rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .sidebar.active~.sidebar-overlay {
+                display: block;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .messages-area {
+                padding: 1rem;
+            }
+
+            .bubble {
+                max-width: 90%;
+                font-size: 0.85rem;
+            }
+
+            .chat-header {
+                padding: 0 1rem;
+            }
+
+            .input-area {
+                padding: 1rem;
+            }
+        }
+
+        .loader {
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-top-color: #0ea5e9;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-layout">
+        <aside class="sidebar" id="app-sidebar">
+            <div style="padding: 1.5rem; border-bottom: 1px solid #f1f5f9;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="database" style="color: #0ea5e9; width: 1.25rem;"></i>
+                        <strong style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;"
+                            data-i18n="rag_app_data_sources">Fuentes de
+                            Datos</strong>
+                    </div>
+                    <button class="mobile-toggle" onclick="toggleSidebar()" style="margin-right: -0.5rem;">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                </div>
+                <button id="upload-btn" class="btn btn-primary"
+                    style="width: 100%; padding: 0.6rem; font-size: 0.75rem;">
+                    <i data-lucide="plus" style="width: 1rem; margin-right: 0.25rem;"></i> <span
+                        data-i18n="rag_app_upload">Cargar Documento</span>
+                </button>
+                <input type="file" id="file-input" style="display: none;">
+            </div>
+            <div class="file-list" id="file-list">
+                <div style="text-align: center; color: #94a3b8; padding-top: 2rem; font-size: 0.8rem;"
+                    data-i18n="rag_app_loading_files">Cargando
+                    archivos...</div>
+            </div>
+
+            <div
+                style="padding: 1rem; border-top: 1px solid #f1f5f9; display: flex; gap: 0.5rem; justify-content: center;">
+                <button onclick="changeLanguage('es')" class="mobile-lang-btn" data-lang="es"
+                    style="padding: 0.4rem 0.8rem; border-radius: 0.5rem; border: 1px solid #e2e8f0; background: white; cursor: pointer; font-size: 0.75rem; font-weight: 700;">ES</button>
+                <button onclick="changeLanguage('en')" class="mobile-lang-btn" data-lang="en"
+                    style="padding: 0.4rem 0.8rem; border-radius: 0.5rem; border: 1px solid #e2e8f0; background: white; cursor: pointer; font-size: 0.75rem; font-weight: 700;">EN</button>
+            </div>
+        </aside>
+
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-chat">
+            <header class="chat-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <button class="mobile-toggle" onclick="toggleSidebar()">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <div
+                        style="width: 2.25rem; height: 2.25rem; background: #f0f9ff; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="bot" style="color: #0ea5e9; width: 1.25rem;"></i>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem;" data-i18n="rag_app_bot_name">Asistente
+                            Inteligente</div>
+                        <div style="font-size: 0.65rem; color: #10b981;" data-i18n="rag_app_online">● Online</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 0.5rem;">
+                    <button id="clear-chat-btn" title="Limpiar conversación"
+                        style="background: none; border: none; cursor: pointer; color: #94a3b8; padding: 0.5rem; transition: color 0.2s;">
+                        <i data-lucide="trash-2" style="width: 1.25rem;"></i>
+                    </button>
+                    <button onclick="window.close()" title="Cerrar ventana"
+                        style="background: none; border: none; cursor: pointer; color: #94a3b8; padding: 0.5rem; transition: color 0.2s;">
+                        <i data-lucide="x" style="width: 1.25rem;"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="messages-area" id="messages">
+                <div class="bubble ai-bubble animate-on-scroll visible" data-i18n="rag_app_welcome">
+                    Hola. He procesado sus documentos cargados. ¿En qué puedo ayudarle hoy con el conocimiento de su
+                    empresa?
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-box">
+                    <input type="text" id="user-input" placeholder="Escriba su consulta profesional..."
+                        data-i18n="rag_app_input_placeholder"
+                        style="flex: 1; background: transparent; border: none; padding: 0.75rem; outline: none; font-family: inherit; font-size: 0.9rem;">
+                    <button id="send-btn"
+                        style="background: #0ea5e9; color: white; border: none; border-radius: 0.75rem; padding: 0.5rem 1rem; cursor: pointer;">
+                        <i data-lucide="send" style="width: 1.25rem;"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/rag-app.js"></script>
+    <script>
+        lucide.createIcons();
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('app-sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // Close sidebar on item click if mobile
+        document.getElementById('file-list').addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                document.getElementById('app-sidebar').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

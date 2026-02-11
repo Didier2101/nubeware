@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos | Nubeware</title>
+    <link rel="icon" href="assets/favicon_v2.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/i18n.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="main-navbar">
+        <div class="container flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <a href="index.html" class="flex items-center gap-2"
+                    style="color: var(--color-slate-900); text-decoration: none;">
+                    <div
+                        style="width: 2.5rem; height: 2.5rem; background: rgba(14,165,233,0.1); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="sparkles" class="text-primary"
+                            style="color: var(--color-primary); width: 1.25rem;"></i>
+                    </div>
+                    <span style="font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em;">Nube<span
+                            class="text-primary">ware</span></span>
+                </a>
+            </div>
+
+            <!-- Header Right: Navigation & Language -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="nav-link">
+                    <span data-i18n="nav_inicio">Inicio</span>
+                </a>
+
+                <!-- Dropdown Servicios -->
+                <div class="nav-item-dropdown">
+                    <a href="services.html" class="nav-link flex items-center gap-1">
+                        <span data-i18n="nav_servicios">Servicios</span> <i data-lucide="chevron-down"
+                            style="width: 14px;"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="ai-solutions.html" class="dropdown-link">
+                            <i data-lucide="cpu" style="width: 16px;"></i> <span data-i18n="nav_ai">IA
+                                Solutions</span>
+                        </a>
+                        <a href="custom-software.html" class="dropdown-link">
+                            <i data-lucide="code-2" style="width: 16px;"></i> <span
+                                data-i18n="nav_software">Software</span>
+                        </a>
+                        <a href="hardware-solutions.html" class="dropdown-link">
+                            <i data-lucide="layers" style="width: 16px;"></i> <span
+                                data-i18n="nav_hardware">Hardware</span>
+                        </a>
+                        <a href="cloud-integration.html" class="dropdown-link">
+                            <i data-lucide="cloud" style="width: 16px;"></i> <span data-i18n="nav_cloud">Cloud</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dropdown Más -->
+                <div class="nav-item-dropdown">
+                    <button class="nav-link flex items-center gap-1"
+                        style="background: none; border: none; cursor: pointer; text-transform: uppercase;">
+                        <span data-i18n="nav_mas">Más</span> <i data-lucide="chevron-down" style="width: 14px;"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="about.html" class="dropdown-link">
+                            <i data-lucide="info" style="width: 16px;"></i> <span
+                                data-i18n="nav_nosotros">Nosotros</span>
+                        </a>
+                        <a href="contact.html" class="dropdown-link">
+                            <i data-lucide="message-square" style="width: 16px;"></i> <span
+                                data-i18n="nav_contacto">Contacto</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="rag.html" class="nav-rag-btn">
+                    <i data-lucide="zap" style="width: 14px;"></i> <span data-i18n="nav_rag">Acceso RAG</span>
+                </a>
+
+                <!-- Language Dropdown -->
+                <div class="nav-item-dropdown">
+                    <button class="nav-link flex items-center" style="background: none; border: none; cursor: pointer;">
+                        <i data-lucide="globe" style="width: 16px;"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" style="min-width: 160px;">
+                        <button onclick="changeLanguage('es')" class="dropdown-link lang-btn-select" data-lang="es"
+                            style="width:100%; border:none; background:none; cursor:pointer; text-align:left;">
+                            <img src="https://flagcdn.com/w20/co.png" alt="CO" style="width: 20px; border-radius: 2px;">
+                            Español
+                        </button>
+                        <button onclick="changeLanguage('en')" class="dropdown-link lang-btn-select" data-lang="en"
+                            style="width:100%; border:none; background:none; cursor:pointer; text-align:left;">
+                            <img src="https://flagcdn.com/w20/us.png" alt="EN" style="width: 20px; border-radius: 2px;">
+                            English
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-btn lg:hidden" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html" class="mobile-nav-link" data-i18n="nav_inicio">Inicio</a>
+            <a href="services.html" class="mobile-nav-link" data-i18n="nav_servicios">Servicios</a>
+            <a href="about.html" class="mobile-nav-link" data-i18n="nav_nosotros">Nosotros</a>
+            <a href="contact.html" class="mobile-nav-link" data-i18n="nav_contacto">Contacto</a>
+            <div style="padding: 0.75rem 1rem; font-weight: 700; font-size: 0.65rem; color: var(--color-slate-400); text-transform: uppercase; letter-spacing: 0.1em;"
+                data-i18n="nav_lang">Idioma</div>
+            <div class="flex gap-2" style="padding: 0 1rem 1rem;">
+                <button onclick="changeLanguage('es')" class="mobile-lang-btn flex items-center gap-2" data-lang="es"
+                    style="background: white; border: 1px solid var(--color-slate-200); padding: 0.4rem 0.75rem; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem;">
+                    <img src="https://flagcdn.com/w20/co.png" alt="CO" style="width: 16px; border-radius: 2px;"> ES
+                </button>
+                <button onclick="changeLanguage('en')" class="mobile-lang-btn flex items-center gap-2" data-lang="en"
+                    style="background: white; border: 1px solid var(--color-slate-200); padding: 0.4rem 0.75rem; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem;">
+                    <img src="https://flagcdn.com/w20/us.png" alt="EN" style="width: 16px; border-radius: 2px;"> EN
+                </button>
+            </div>
+            <a href="rag.html" class="mobile-nav-link"
+                style="color: var(--color-primary); font-weight: 800; border-top: 1px solid var(--color-slate-100);">
+                <i data-lucide="zap" style="width: 14px; display: inline-block; vertical-align: middle;"></i> <span
+                    data-i18n="nav_rag">Acceso RAG</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <section class="section" style="padding-top: 8rem;">
+        <div class="container animate-on-scroll" style="max-width: 800px;">
+            <h1 data-i18n="terms_title">Términos de Servicio</h1>
+            <p data-i18n="terms_intro">Al utilizar los servicios de Nubeware, usted acepta los siguientes términos y
+                condiciones relacionados con el uso de nuestra plataforma de IA y software.</p>
+
+            <h3 data-i18n="terms_sec1_title">1. Licencia de Uso</h3>
+            <p data-i18n="terms_sec1_desc">Nubeware otorga una licencia limitada e intransferible para acceder a
+                nuestras soluciones de software y servicios de IA de acuerdo con el plan contratado.</p>
+
+            <h3 data-i18n="terms_sec2_title">2. Responsabilidad</h3>
+            <p data-i18n="terms_sec2_desc">Si bien nuestras herramientas de IA son altamente precisas, los resultados
+                deben ser supervisados por profesionales cualificados en contextos críticos.</p>
+
+            <h3 data-i18n="terms_sec3_title">3. SLA y Soporte</h3>
+            <p data-i18n="terms_sec3_desc">Garantizamos un tiempo de actividad del 99.9% para nuestras soluciones
+                enterprise, con soporte técnico prioritario 24/7.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div style="grid-column: span 2;">
+                    <div class="footer-brand">
+                        <div class="footer-logo"><i data-lucide="sparkles"></i></div>
+                        <span style="font-weight: 800; font-size: 1.25rem;">Nube<span
+                                class="text-primary">ware</span></span>
+                    </div>
+                    <p data-i18n="footer_desc">Impulsando la innovación empresarial a través de la inteligencia
+                        artificial.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading" data-i18n="footer_platform">Plataforma</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html" data-i18n="nav_servicios">Servicios</a></li>
+                        <li><a href="rag.html" data-i18n="footer_rag">RAG Solution</a></li>
+                        <li><a href="about.html" data-i18n="nav_nosotros">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading" data-i18n="footer_legal">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html" data-i18n="footer_privacy">Privacidad</a></li>
+                        <li><a href="terms.html" data-i18n="footer_terms">Términos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">© 2024 Nubeware. Todos los derechos reservados.</p>
+                <div style="display:flex; gap:1.5rem">
+                    <span data-i18n="footer_iso">ISO 27001 Certified</span>
+                    <span data-i18n="footer_soc2">SOC2 Type II</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
